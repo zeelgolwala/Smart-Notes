@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <title>Notes App</title>
+</head>
+
+<body>
+    <div class="d-flex">
+        <!----sidee barr-->
+        <aside class="sidebar p-3">
+            <h4>NOTES</h4>
+            <p class="small text-muted mb-1">Add New</p>
+            <button class="btn btn-primary w-100 mb-3" data-bs-toggle="modal" data-bs-target="#notemodal">Note <i
+                    class="bi bi-plus-circle"></i></button>
+            <ul class="list-unstyled mt-4 side-links">
+                <li>Calender <i class="bi bi-calendar-check"></i></li>
+                <li>Archieve <i class="bi bi-archive"></i></li>
+                <li>Trash <i class="bi bi-trash"></i></li>
+            </ul>
+            <div class="upgrade mt-auto">
+                <img src="https://plus.unsplash.com/premium_photo-1684444605542-93725082d214?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bm90ZXN8ZW58MHx8MHx8fDA%3D"
+                    alt="" width="50" />
+                <p mt-2>Acess Unlimited Folders & Features</p>
+                <button class="btn btn-dark btn-sm">Upgrade Pro</button>
+
+            </div>
+
+        </aside>
+        <!----main-->
+
+        <main class="content p-4 flex-grow-1">
+            <!---top bar-->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold">MY NOTES</h2>
+                <input type="text" id="searchinput" class="form-control w-25" placeholder="search....">
+
+            </div>
+            <!--recent folder-->
+            <section class="mb-5">
+                <h5 class="fw-bold mb-3">Recent Folder</h5>
+                <div class="row g-3" id="folderlist">
+                    <div class="col-md-3">
+                        <div class="folder-card soft-blue">
+                            <h6>Movie Reviwes</h6>
+                            <p class="text-muted small">12/12/2025</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="folder-card soft-pink">
+                            <h6>Class Notes</h6>
+                            <p class="text-muted small">18/11/2025</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="folder-card soft-yellow">
+                            <h6>Book List</h6>
+                            <p class="text-muted small">18/11/2025</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="folder-card add-folder">
+                            <i class="bi bi-folder-plus fs-1"></i>
+                            <p class="small">New Folder</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!---notes-->
+            <section>
+                <h5 class="fw-bold mb-3">My Notes</h5>
+                <div class="row g-3" id="notesList">
+                    <!--js notes-->
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!--add/edit-->
+    <div class="modal fade" id="notemodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal-title">Add Notes</h5>
+                    <button class="btn-colse" data-bs-dismiss="modal"></button>
+
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="" id="editIndex">
+                    <input type="text" id="noteTitle" class="form-control mb-3" placeholder="Note Title">
+                    <textarea name="" id="noteText" rows="5" class="form-control"
+                        placeholder="write something"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" id="saveBtn">Save</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="./app.js"></script>
+
+
+</body>
+
+</html>
